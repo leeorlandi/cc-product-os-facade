@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Mascot Comparison</title>
+  <style>
+    body { background: #111; color: #ccc; font-family: monospace; margin: 0; padding: 2rem; }
+    h2 { color: #ff6b35; font-size: 0.8rem; margin: 0 0 0.5rem; }
+    .row { display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; margin-bottom: 3rem; }
+    .cell { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .cell p { font-size: 0.65rem; color: #555; margin: 0; text-align: center; }
+
+    /* OVERLAY mode */
+    .overlay-wrap { position: relative; width: 200px; height: 200px; border: 1px solid #333; }
+    .overlay-wrap img,
+    .overlay-wrap svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; }
+    .overlay-wrap svg { mix-blend-mode: screen; }
+
+    /* Controls */
+    .controls { margin-bottom: 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .controls label { font-size: 0.75rem; }
+    input[type=range] { width: 200px; }
+    #opacity-val { font-size: 0.7rem; color: #a8e878; }
+
+    /* Fixed-size comparison boxes */
+    .box { border: 1px solid #333; background: #0a0a0a; display: flex; align-items: center; justify-content: center; }
+    .box--200 { width: 200px; height: 200px; }
+    .box--100 { width: 100px; height: 100px; }
+  </style>
+</head>
+<body>
+
+<h2>// mascot comparison tool</h2>
+
+<div class="controls">
+  <label>SVG opacity (overlay):
+    <input type="range" id="opacity-slider" min="0" max="100" value="60"/>
+    <span id="opacity-val">60%</span>
+  </label>
+</div>
+
+<div class="row">
+  <div class="cell">
+    <p>reference — open eyes</p>
+    <div class="box box--200">
+      <img src="ref-open.png" style="width:100%;height:100%;object-fit:contain"/>
+    </div>
+  </div>
+
+  <div class="cell">
+    <p>our SVG — open eyes</p>
+    <div class="box box--200">
+      <svg id="svg-preview" viewBox="0 0 110 87" xmlns="http://www.w3.org/2000/svg" style="width:160px;height:auto">
+        <rect x="10" y="0" width="90" height="21.75" fill="#c8614e"/>
+        <rect x="10" y="21.75" width="90" height="21.75" fill="#c8614e"/>
+        <rect x="0"  y="21.75" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="100" y="21.75" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="10" y="43.5" width="90" height="21.75" fill="#c8614e"/>
+        <rect x="10" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="30" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="70" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="90" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="20" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+        <rect x="80" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="cell">
+    <p>overlay (ref under, SVG over)</p>
+    <div class="overlay-wrap">
+      <img src="ref-open.png"/>
+      <svg id="svg-overlay" viewBox="0 0 110 87" xmlns="http://www.w3.org/2000/svg" style="opacity:0.6">
+        <rect x="10" y="0" width="90" height="21.75" fill="#c8614e"/>
+        <rect x="10" y="21.75" width="90" height="21.75" fill="#c8614e"/>
+        <rect x="0"  y="21.75" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="100" y="21.75" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="10" y="43.5" width="90" height="21.75" fill="#c8614e"/>
+        <rect x="10" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="30" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="70" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="90" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+        <rect x="20" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+        <rect x="80" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="cell">
+    <p>reference — squint</p>
+    <div class="box box--200">
+      <img src="ref-squint.png" style="width:100%;height:100%;object-fit:contain"/>
+    </div>
+  </div>
+
+  <div class="cell">
+    <p>our SVG — squint</p>
+    <div class="box box--200">
+      <svg viewBox="0 0 110 87" xmlns="http://www.w3.org/2000/svg" style="width:160px;height:auto">
+        <rect x="13" y="0"  width="66" height="70" fill="#c8614e"/>
+        <rect x="0"  y="26" width="13" height="22" fill="#c8614e"/>
+        <rect x="79" y="26" width="13" height="22" fill="#c8614e"/>
+        <rect x="13" y="70" width="20" height="24" fill="#c8614e"/>
+        <rect x="59" y="70" width="20" height="24" fill="#c8614e"/>
+        <polyline points="22,11 38,20 22,29" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        <polyline points="70,11 54,20 70,29" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<hr style="border-color:#222; margin: 2rem 0"/>
+<h2>// live adjustment (edit values below, page auto-refreshes)</h2>
+<p style="font-size:0.7rem;color:#555">Tweak SVG params here to compare, then copy to index.html when it looks right.</p>
+
+<div style="margin-top:1rem">
+  <table style="font-size:0.72rem;border-collapse:collapse;color:#ccc">
+    <tr><th style="text-align:left;padding:4px 12px 4px 0;color:#ff6b35">param</th><th style="text-align:left;padding:4px 0;color:#ff6b35">applied</th><th style="text-align:left;padding:4px 0 4px 12px;color:#ff6b35">notes</th></tr>
+    <tr><td style="padding:3px 12px 3px 0">viewBox</td><td>0 0 92 94</td><td>92=13+66+13, 94=70+24</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">body x/y/w/h</td><td>13, 0, 66, 70</td><td>nearly square (70:66)</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">arm w/h</td><td>13, 22</td><td>stub = 20% of body w</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">arm y</td><td>26</td><td>37% from body top</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">eye w/h</td><td>14, 14</td><td>21% of body w each</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">left/right eye x</td><td>24, 54</td><td>gap between = 16</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">eye y</td><td>12</td><td>17% from body top</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">leg w/h</td><td>20, 24</td><td>30% of body w each</td></tr>
+    <tr><td style="padding:3px 12px 3px 0">leg gap</td><td>59-33=26</td><td>39% of body w</td></tr>
+  </table>
+</div>
+
+<script>
+  const slider = document.getElementById('opacity-slider');
+  const val = document.getElementById('opacity-val');
+  const overlay = document.getElementById('svg-overlay');
+  slider.addEventListener('input', () => {
+    overlay.style.opacity = slider.value / 100;
+    val.textContent = slider.value + '%';
+  });
+</script>
+</body>
+</html>

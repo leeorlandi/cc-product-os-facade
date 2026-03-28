@@ -34,11 +34,45 @@
   <section class="section hero" id="hero">
     <div class="container">
       <p class="hero__eyebrow">// v0.1.0 &nbsp;—&nbsp; prototype &nbsp;—&nbsp; not a real product yet</p>
-      <h1 class="hero__title">
-        AN OS FOR<br>
-        PRODUCT<br>
-        L33D0RZ
-      </h1>
+      <div class="hero__title-row">
+        <h1 class="hero__title">
+          AN OS FOR<br>
+          PRODUCT<br>
+          L33D0RZ
+        </h1>
+
+        <!-- ── Mascot ── -->
+        <!-- 11col×8row pixel grid. col=10, row=10.875, viewBox=110×87 -->
+        <div class="mascot" aria-hidden="true">
+          <svg class="mascot__svg" viewBox="0 0 110 87" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body rows 0-5: single block eliminates seam lines -->
+            <rect x="10" y="0" width="90" height="65.25" fill="#c8614e"/>
+            <!-- Rows 2-3: left arm (col 0) -->
+            <rect x="0" y="21.75" width="10" height="21.75" fill="#c8614e"/>
+            <!-- Rows 2-3: right arm (col 10, waves) -->
+            <g class="mascot__arm">
+              <rect x="100" y="21.75" width="10" height="21.75" fill="#c8614e"/>
+            </g>
+            <!-- Static shoulder: covers gap at arm-body junction during wave -->
+            <rect x="98" y="21.75" width="8" height="21.75" fill="#c8614e"/>
+            <!-- Rows 6-7: 4 legs at cols 1,3,7,9 -->
+            <rect x="10" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+            <rect x="30" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+            <rect x="70" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+            <rect x="90" y="65.25" width="10" height="21.75" fill="#c8614e"/>
+            <!-- Eyes open: col 2 and col 8, row 2 only (top half of mid section) -->
+            <g class="mascot__eyes-open">
+              <rect x="20" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+              <rect x="80" y="21.75" width="10" height="10.88" fill="#1a1a1a"/>
+            </g>
+            <!-- Eyes squint (> <): thick hollow chevrons, same box as open eyes -->
+            <g class="mascot__eyes-squint">
+              <polyline points="21,22.5 28.5,27.19 21,31.9" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="miter" stroke-linecap="butt"/>
+              <polyline points="89,22.5 81.5,27.19 89,31.9" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="miter" stroke-linecap="butt"/>
+            </g>
+          </svg>
+        </div>
+      </div>
       <p class="hero__subtitle">
         A folder structure, a set of markdown conventions, and a discipline
         for running your product org like a system.

@@ -467,6 +467,67 @@ body > * { position: relative; z-index: 1; }
 .t-indent { padding-left: 1.25rem; }
 .t-indent2 { padding-left: 2.5rem; }
 
+/* ── Mascot ── */
+.hero__title-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 0;
+}
+
+.mascot {
+  flex-shrink: 0;
+  animation: mascot-float 3.2s ease-in-out infinite;
+}
+
+.mascot__svg {
+  width: 90px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* right arm waves around its left edge (where it joins the body) */
+.mascot__arm {
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: mascot-wave 12s ease-in-out infinite;
+}
+
+/* eyes start open, squint briefly every ~4s */
+.mascot__eyes-open {
+  animation: eyes-open 4s step-end infinite;
+}
+
+.mascot__eyes-squint {
+  animation: eyes-squint 4s step-end infinite;
+}
+
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes mascot-wave {
+  0%     { transform: rotate(0deg); }
+  3.3%   { transform: rotate(-22deg); }
+  6.7%   { transform: rotate(8deg); }
+  10%    { transform: rotate(-18deg); }
+  13.3%  { transform: rotate(6deg); }
+  16.7%  { transform: rotate(0deg); }
+  100%   { transform: rotate(0deg); }
+}
+
+@keyframes eyes-open {
+  0%, 88%       { opacity: 1; }
+  89%, 100%     { opacity: 0; }
+}
+
+@keyframes eyes-squint {
+  0%, 88%       { opacity: 0; }
+  89%, 95%      { opacity: 1; }
+  96%, 100%     { opacity: 0; }
+}
+
 /* ── Hero ── */
 .hero {
   min-height: 88vh;
@@ -489,7 +550,11 @@ body > * { position: relative; z-index: 1; }
   color: var(--orange);
   font-size: clamp(1.3rem, 3.5vw, 2.6rem);
   line-height: 1.9;
-  margin-bottom: 1.75rem;
+  margin-bottom: 0;
+}
+
+.hero__title-row + * {
+  margin-top: 1.75rem;
 }
 
 .hero__subtitle {
@@ -753,6 +818,11 @@ body > * { position: relative; z-index: 1; }
   .section__heading { font-size: 0.85rem; }
 
   .nav__links .btn:not(.btn--primary) { display: none; }
+}
+
+@media (max-width: 560px) {
+  .hero__title-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .mascot__svg { width: 45px; }
 }
 
 @media (max-width: 480px) {

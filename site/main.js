@@ -65,6 +65,36 @@ const TAB_DATA = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ── Theme toggle ──────────────────────────────────────
+  const THEME_KEY = 'cc-theme';
+  const root = document.documentElement;
+  const themeBtns = document.querySelectorAll('[data-theme-btn]');
+
+  function applyTheme(value) {
+    // 'system' = remove attribute and let CSS media query decide
+    if (value === 'system') {
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme', value);
+    }
+    themeBtns.forEach(b => {
+      b.classList.toggle('active', b.dataset.themeBtn === value);
+    });
+  }
+
+  const saved = localStorage.getItem(THEME_KEY) || 'system';
+  applyTheme(saved);
+
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = btn.dataset.themeBtn;
+      localStorage.setItem(THEME_KEY, value);
+      applyTheme(value);
+    });
+  });
+
+  // ── Tab switcher ──────────────────────────────────────
   const tabs      = document.querySelectorAll('.tab');
   const pathEl    = document.getElementById('tab-path');
   const lsEl      = document.getElementById('tab-ls');

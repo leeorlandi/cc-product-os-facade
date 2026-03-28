@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CC — Claude Code for Product L33d0rz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       NAV
+  ════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <span class="nav__logo">cl@ud_code&nbsp;_</span>
+      <div class="nav__links">
+        <a href="#system" class="btn">[ system ]</a>
+        <a href="#how" class="btn">[ how ]</a>
+        <a href="#cta" class="btn btn--primary">&gt; get it</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════ -->
+  <section class="section hero" id="hero">
+    <div class="container">
+      <p class="hero__eyebrow">// v0.1.0 &nbsp;—&nbsp; prototype &nbsp;—&nbsp; not a real product yet</p>
+      <h1 class="hero__title">
+        AN OS FOR<br>
+        PRODUCT<br>
+        L33D0RZ
+      </h1>
+      <p class="hero__subtitle">
+        A folder structure, a set of markdown conventions, and a discipline
+        for running your product org like a system.
+        No app. No vendor. No subscription. Just files.
+      </p>
+      <div class="hero__ctas">
+        <a href="#" class="btn btn--primary btn--lg">&gt; Download ZIP &nbsp;⌘</a>
+        <a href="#" class="btn btn--secondary btn--lg">$ git clone cc-system _</a>
+      </div>
+      <div class="hero__secondary-links">
+        <a href="#system">Learn how this works</a>
+        <a href="#snapshots">Explore the live OS</a>
+      </div>
+
+      <div class="terminal hero__terminal" style="margin-top:2.5rem">
+        <div class="terminal__titlebar">
+          <span class="terminal__dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </span>
+          <span class="terminal__label">~/product-os $</span>
+        </div>
+        <div class="terminal__body">
+          <span class="t-line t-prompt">ls</span>
+          <span class="t-line t-green">context/&nbsp;&nbsp; planning/&nbsp;&nbsp; teams/&nbsp;&nbsp; decisions/&nbsp;&nbsp; now.md</span>
+          <span class="t-line">&nbsp;</span>
+          <span class="t-line t-prompt">cat now.md | head -4</span>
+          <span class="t-line t-bright">## Now — Q2 2025</span>
+          <span class="t-line">Focus: reduce activation drop-off by 30%.</span>
+          <span class="t-line">Blocker: pricing page decision pending.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       SYSTEM PREVIEW (Tab Switcher)
+  ════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="system-preview">
+    <div class="container">
+      <p class="section-label">// system preview</p>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="context" role="tab">context/</button>
+        <button class="tab" data-tab="planning" role="tab">planning/</button>
+        <button class="tab" data-tab="teams" role="tab">teams/</button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="terminal terminal--green">
+          <div class="terminal__titlebar">
+            <span class="terminal__dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </span>
+            <span class="terminal__label" id="tab-path">~/product-os/context $</span>
+          </div>
+          <div class="terminal__body" id="tab-ls">
+            <!-- populated by main.js -->
+          </div>
+        </div>
+
+        <div class="terminal">
+          <div class="terminal__titlebar">
+            <span class="terminal__dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </span>
+            <span class="terminal__label" id="tab-file-label">context/strategy.md</span>
+          </div>
+          <div class="terminal__body" id="tab-file">
+            <!-- populated by main.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       RUN LIKE A SYSTEM
+  ════════════════════════════════════════════════ -->
+  <section class="section" id="pillars">
+    <div class="container">
+      <p class="section-label">// why it works</p>
+      <h2 class="section__heading">RUN YOUR PRODUCT ORG<br>LIKE A SYSTEM.</h2>
+
+      <div class="grid-3">
+
+        <!-- artifact -->
+        <div>
+          <p class="pillar-label">— artifact</p>
+          <p class="pillar-desc">
+            Every decision, strategy, and team state lives in a file.
+            Not in someone's head. Not in a meeting recording.
+          </p>
+          <div class="terminal">
+            <div class="terminal__titlebar">
+              <span class="terminal__dots">
+                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              </span>
+              <span class="terminal__label">decisions/2025-q2-pricing.md</span>
+            </div>
+            <div class="terminal__body">
+              <span class="t-line t-bright">## Decision: Pricing Page</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">date:</span><span class="t-val"> 2025-03-28</span>
+              <span class="t-line t-key">owner:</span><span class="t-val"> Lee</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">context:</span>
+              <span class="t-line t-val t-indent">Conversion at /pricing: 1.2%.</span>
+              <span class="t-line t-val t-indent">Benchmark: 3.5%.</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">decision:</span>
+              <span class="t-line t-val t-indent">Rewrite copy. Lead with outcome.</span>
+              <span class="t-line t-val t-indent">Remove comparison table.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- workflow -->
+        <div>
+          <p class="pillar-label">— workflow</p>
+          <p class="pillar-desc">
+            A consistent cadence turns individual files into a
+            living system. Weekly, biweekly, quarterly — it's
+            a rhythm, not a process.
+          </p>
+          <div class="terminal">
+            <div class="terminal__titlebar">
+              <span class="terminal__dots">
+                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              </span>
+              <span class="terminal__label">planning/sprint-42.md</span>
+            </div>
+            <div class="terminal__body">
+              <span class="t-line t-bright">## Sprint 42 — Apr 7–18</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">goal:</span>
+              <span class="t-line t-val t-indent">Validate onboarding step 3</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">committed:</span>
+              <span class="t-line t-val t-indent">[x] empty state redesign</span>
+              <span class="t-line t-val t-indent">[ ] progress ring component</span>
+              <span class="t-line t-val t-indent">[ ] 3 user interviews</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">done when:</span>
+              <span class="t-line t-val t-indent">Step 3 completion &gt;= 60%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- visibility -->
+        <div>
+          <p class="pillar-label">— visibility</p>
+          <p class="pillar-desc">
+            Anyone on the team can read the current state of
+            the org in under two minutes. No meeting required.
+          </p>
+          <div class="terminal">
+            <div class="terminal__titlebar">
+              <span class="terminal__dots">
+                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+              </span>
+              <span class="terminal__label">teams/growth/biweekly.md</span>
+            </div>
+            <div class="terminal__body">
+              <span class="t-line t-bright">## Growth — Biweekly</span>
+              <span class="t-line t-dim">Mar 24 → Apr 7</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">shipped:</span>
+              <span class="t-line t-val t-indent">Pricing page v2 (live Apr 1)</span>
+              <span class="t-line t-val t-indent">Churned user interviews (n=5)</span>
+              <span class="t-line">&nbsp;</span>
+              <span class="t-line t-key">metrics:</span>
+              <span class="t-line t-val t-indent">Activation: 41% (was 38%)</span>
+              <span class="t-line t-val t-indent">Pricing CVR: 1.9% (was 1.2%)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       WHAT THIS IS
+  ════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="what">
+    <div class="container">
+      <p class="section-label">// what this is</p>
+
+      <div class="prose">
+        <p>This is a folder structure. A set of markdown conventions. A discipline
+        you impose on your file system and then operate deliberately.</p>
+
+        <p>It is <strong>not a SaaS product</strong>. It doesn't sync, notify,
+        or integrate with anything. There is no dashboard. There is no
+        AI assistant embedded in it. There is no vendor to negotiate with.</p>
+
+        <p>A product leader using this system maintains a small set of files that
+        answer the questions everyone actually asks: <strong>What are we focused on?
+        Who owns what? What did we decide and why?</strong></p>
+
+        <p>The system is file-based and GitHub-native. You clone it, rename the
+        folders to match your org, and start writing. That's the whole setup.</p>
+
+        <p>This is a prototype. The system is evolving. If you find it useful,
+        the right response is to fork it and make it yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       WHY THIS EXISTS
+  ════════════════════════════════════════════════ -->
+  <section class="section" id="why">
+    <div class="container">
+      <p class="section-label">// why this exists</p>
+      <h2 class="section__heading">FOUR PROBLEMS<br>NAMED DIRECTLY.</h2>
+
+      <div class="problem-grid">
+        <div class="problem-item">
+          <p class="problem-num">01</p>
+          <p class="problem-text">
+            <strong>Context fragmentation.</strong><br>
+            The strategy is in a deck presented once. The decisions are in Slack.
+            The team's focus is in someone's memory. Nothing is in one place,
+            and the cost is paid every time someone needs to make a call.
+          </p>
+        </div>
+        <div class="problem-item">
+          <p class="problem-num">02</p>
+          <p class="problem-text">
+            <strong>No operating system.</strong><br>
+            You have tools. You don't have a system. Tools without a system
+            produce noise, not signal. Jira doesn't tell you what you're focused
+            on. Notion doesn't tell you what you decided.
+          </p>
+        </div>
+        <div class="problem-item">
+          <p class="problem-num">03</p>
+          <p class="problem-text">
+            <strong>Decisions disconnected from context.</strong><br>
+            A decision log without the context that produced it is a list of
+            outcomes. It doesn't help anyone reason about the next decision.
+            You need the why, not just the what.
+          </p>
+        </div>
+        <div class="problem-item">
+          <p class="problem-num">04</p>
+          <p class="problem-text">
+            <strong>No visibility without a meeting.</strong><br>
+            Leaders shouldn't need to schedule 30 minutes to understand
+            where their org is. That information should be readable in
+            under two minutes, any time, without asking anyone.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       THE SYSTEM (Folder Tree)
+  ════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="system">
+    <div class="container">
+      <p class="section-label">// the system</p>
+      <h2 class="section__heading">THE FOLDER TREE.</h2>
+
+      <div class="terminal" style="max-width:680px">
+        <div class="terminal__titlebar">
+          <span class="terminal__dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </span>
+          <span class="terminal__label">$ tree ~/product-os</span>
+        </div>
+        <div class="terminal__body">
+          <pre class="tree-body"><span class="tree-dir">product-os/</span>
+<span class="tree-file">├── </span><span class="tree-dir">context/</span>
+<span class="tree-file">│   ├── strategy.md</span>              <span class="tree-note"># where we're going and why</span>
+<span class="tree-file">│   ├── north-star.md</span>            <span class="tree-note"># the single metric that matters</span>
+<span class="tree-file">│   ├── customer-segments.md</span>     <span class="tree-note"># who we're building for</span>
+<span class="tree-file">│   └── competitive-landscape.md</span> <span class="tree-note"># what we're up against</span>
+<span class="tree-file">│</span>
+<span class="tree-file">├── </span><span class="tree-dir">planning/</span>
+<span class="tree-file">│   ├── now.md</span>                   <span class="tree-note"># this quarter's focus (always current)</span>
+<span class="tree-file">│   ├── roadmap-q2.md</span>            <span class="tree-note"># committed work this quarter</span>
+<span class="tree-file">│   ├── backlog-parking-lot.md</span>   <span class="tree-note"># things we're not doing yet</span>
+<span class="tree-file">│   └── sprint-42.md</span>             <span class="tree-note"># current sprint</span>
+<span class="tree-file">│</span>
+<span class="tree-file">├── </span><span class="tree-dir">teams/</span>
+<span class="tree-file">│   ├── </span><span class="tree-dir">growth/</span>
+<span class="tree-file">│   │   ├── team.md</span>              <span class="tree-note"># who, mission, constraints</span>
+<span class="tree-file">│   │   ├── sprint-42.md</span>
+<span class="tree-file">│   │   └── biweekly-2025-04-07.md</span>
+<span class="tree-file">│   ├── </span><span class="tree-dir">platform/</span>
+<span class="tree-file">│   │   └── team.md</span>
+<span class="tree-file">│   └── </span><span class="tree-dir">core/</span>
+<span class="tree-file">│       └── team.md</span>
+<span class="tree-file">│</span>
+<span class="tree-file">├── </span><span class="tree-dir">decisions/</span>
+<span class="tree-file">│   ├── 2025-q1-api-depriority.md</span>
+<span class="tree-file">│   ├── 2025-q2-pricing-rewrite.md</span>
+<span class="tree-file">│   └── README.md</span>               <span class="tree-note"># decision log index</span>
+<span class="tree-file">│</span>
+<span class="tree-file">├── </span><span class="tree-dir">research/</span>
+<span class="tree-file">│   ├── churned-users-batch1.md</span>
+<span class="tree-file">│   └── onboarding-interviews.md</span>
+<span class="tree-file">│</span>
+<span class="tree-file">└── now.md</span>                       <span class="tree-note"># top-level: one file, always readable</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       REAL SNAPSHOTS
+  ════════════════════════════════════════════════ -->
+  <section class="section" id="snapshots">
+    <div class="container">
+      <p class="section-label">// real snapshots</p>
+      <h2 class="section__heading">FILES THAT LOOK<br>LIKE ACTUAL WORK.</h2>
+
+      <div class="snapshot-grid">
+
+        <!-- team.md -->
+        <div class="terminal">
+          <div class="terminal__titlebar">
+            <span class="terminal__dots">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            </span>
+            <span class="terminal__label">teams/growth/team.md</span>
+          </div>
+          <div class="terminal__body">
+            <span class="t-line t-bright">## Growth Team — System File</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">lead:</span><span class="t-val"> Jamie Chen</span>
+            <span class="t-line t-key">em:</span><span class="t-val"> Rohan Mehta</span>
+            <span class="t-line t-key">eng:</span><span class="t-val"> 3 (2 FE, 1 BE)</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">mission:</span>
+            <span class="t-line t-val t-indent">Own the path from signup to "aha moment."</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">current focus:</span>
+            <span class="t-line t-val t-indent">Onboarding step 3 completion rate.</span>
+            <span class="t-line t-val t-indent">Constraint: drop-off at empty state.</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">what we've tried:</span>
+            <span class="t-line t-val t-indent">- Tooltip overlay (abandoned)</span>
+            <span class="t-line t-val t-indent">- Email nudge at 24h (marginal lift)</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-dim">last updated: 2025-04-07</span>
+          </div>
+        </div>
+
+        <!-- now.md -->
+        <div class="terminal">
+          <div class="terminal__titlebar">
+            <span class="terminal__dots">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            </span>
+            <span class="terminal__label">planning/now.md</span>
+          </div>
+          <div class="terminal__body">
+            <span class="t-line t-bright">## Now — Q2 2025</span>
+            <span class="t-line t-dim">Updated: 2025-04-07</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">this quarter:</span>
+            <span class="t-line t-val t-indent">Activation. Not acquisition.</span>
+            <span class="t-line t-val t-indent">The funnel breaks at step 3.</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">active work:</span>
+            <span class="t-line t-val t-indent">- Onboarding redesign (Apr 18)</span>
+            <span class="t-line t-val t-indent">- Pricing page v2 (shipped Apr 1)</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">not doing:</span>
+            <span class="t-line t-val t-indent">Integrations. Enterprise. Hiring.</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">blocker:</span>
+            <span class="t-line t-val t-indent">Pricing copy approval (→ Marta, Thu)</span>
+          </div>
+        </div>
+
+        <!-- biweekly update -->
+        <div class="terminal">
+          <div class="terminal__titlebar">
+            <span class="terminal__dots">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            </span>
+            <span class="terminal__label">teams/growth/biweekly-2025-04-07.md</span>
+          </div>
+          <div class="terminal__body">
+            <span class="t-line t-bright">## Growth — Biweekly Update</span>
+            <span class="t-line t-dim">Mar 24 → Apr 7</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">shipped:</span>
+            <span class="t-line t-val t-indent">- Pricing page v2 (live Apr 1)</span>
+            <span class="t-line t-val t-indent">- Churned user interviews (n=5)</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">metrics:</span>
+            <span class="t-line t-val t-indent">Activation:   41%  (was 38%, target 55%)</span>
+            <span class="t-line t-val t-indent">Pricing CVR:  1.9% (was 1.2%, target 3.5%)</span>
+            <span class="t-line t-val t-indent">Step 3:       38%  (unchanged, target 60%)</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">next two weeks:</span>
+            <span class="t-line t-val t-indent">Step 3 redesign, ship by Apr 18</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">blocker:</span>
+            <span class="t-line t-val t-indent">Eng capacity thin until May 5</span>
+          </div>
+        </div>
+
+        <!-- quarterly memo -->
+        <div class="terminal">
+          <div class="terminal__titlebar">
+            <span class="terminal__dots">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            </span>
+            <span class="terminal__label">context/quarterly-memo-q1-2025.md</span>
+          </div>
+          <div class="terminal__body">
+            <span class="t-line t-bright">## Q1 2025 — Quarterly Memo</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">shipped:</span>
+            <span class="t-line t-val t-indent">- Onboarding v1 (Jan 12)</span>
+            <span class="t-line t-val t-indent">- Pricing page audit + rewrite</span>
+            <span class="t-line t-val t-indent">- 12 customer discovery interviews</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">didn't ship:</span>
+            <span class="t-line t-val t-indent">- API (deprioritized Feb 3)</span>
+            <span class="t-line t-val t-indent">- Mobile app (off roadmap)</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">thinking changed:</span>
+            <span class="t-line t-val t-indent">We were optimizing for acquisition.</span>
+            <span class="t-line t-val t-indent">Q1 data: retention was the constraint.</span>
+            <span class="t-line t-val t-indent">Pivoted in week 6. Right call.</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-key">q2 intent:</span>
+            <span class="t-line t-val t-indent">Own activation. Prove step 3 moves metric.</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-dim">Written: 2025-04-01 / Lee Orlandi</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       HOW IT WORKS
+  ════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="how">
+    <div class="container">
+      <p class="section-label">// how it works</p>
+      <h2 class="section__heading">THE CADENCE<br>SYSTEM.</h2>
+
+      <div class="cadence-stack">
+        <div class="cadence-layer">
+          <p class="cadence-layer__title">daily</p>
+          <p class="cadence-layer__body">
+            Skim <code>now.md</code>. It tells you today's focus and the active blocker.
+            Update it when something changes. It's one file, always in the same place.
+          </p>
+        </div>
+        <div class="cadence-layer">
+          <p class="cadence-layer__title">weekly</p>
+          <p class="cadence-layer__body">
+            Update team sprint files. Pull blockers forward.
+            Generate the biweekly update from the decisions log and team files.
+            It's a 15-minute operation if the files are current.
+          </p>
+        </div>
+        <div class="cadence-layer">
+          <p class="cadence-layer__title">quarterly</p>
+          <p class="cadence-layer__body">
+            Write the quarterly memo. Four sections: what we shipped,
+            what we didn't, what changed in our thinking, what's next.
+            It takes 90 minutes. It replaces a QBR deck.
+          </p>
+        </div>
+        <div class="cadence-layer">
+          <p class="cadence-layer__title">on demand</p>
+          <p class="cadence-layer__body">
+            <code>decisions/</code> is queryable. Grep it. Sort by date. Filter by area.
+            When someone asks "why did we do that?" — you open a file.
+            You don't interrupt anyone. You don't schedule a call.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       CTA
+  ════════════════════════════════════════════════ -->
+  <section class="section cta-section" id="cta">
+    <div class="container">
+      <p class="section-label" style="text-align:center">// get the system</p>
+      <h2 class="section__heading">START WITH<br>THE FILES.</h2>
+      <p class="section__subhead">
+        Clone the repo. Rename the folders to match your org.
+        Fill in <code>now.md</code>.
+        Run your product org like a system.
+      </p>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn--primary btn--lg">&gt; Download ZIP &nbsp;⌘</a>
+        <a href="#" class="btn btn--secondary btn--lg">$ git clone cc-system _</a>
+      </div>
+      <p style="margin-top:1.5rem; font-size:0.72rem; color:var(--text-dim); text-align:center">
+        → Portable, GitHub-based system to run your product org
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>cl@ud_code — cc for product l33d0rz</span>
+      <span>
+        <a href="https://github.com/leeorlandi" target="_blank" rel="noopener">github.com/leeorlandi</a>
+        &nbsp;·&nbsp; prototype. not a real product. evolving.
+      </span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

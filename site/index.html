@@ -21,11 +21,9 @@
         <a href="#system" class="btn">[ system ]</a>
         <a href="#how" class="btn">[ how ]</a>
         <a href="#cta" class="btn btn--primary">&gt; get it</a>
-        <div class="theme-toggle" role="group" aria-label="Theme">
-          <button class="theme-toggle__btn" data-theme-btn="dark"  title="Dark">dark</button>
-          <button class="theme-toggle__btn" data-theme-btn="light" title="Light">light</button>
-          <button class="theme-toggle__btn" data-theme-btn="system" title="Match system">sys</button>
-        </div>
+        <button class="theme-icon-btn" id="theme-icon-btn" aria-label="Theme" title="Theme">
+          <span class="theme-icon-btn__icon" id="theme-nav-icon"></span>
+        </button>
       </div>
     </div>
   </nav>
@@ -572,6 +570,46 @@
       </span>
     </div>
   </footer>
+
+  <!-- Theme Modal -->
+  <div class="theme-modal-backdrop" id="theme-modal-backdrop" hidden>
+    <div class="theme-modal" role="dialog" aria-modal="true" aria-labelledby="theme-modal-title">
+      <div class="theme-modal__header">
+        <span class="theme-modal__title" id="theme-modal-title">Dark mode</span>
+        <button class="theme-modal__close" id="theme-modal-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="theme-modal__tiles">
+        <button class="theme-tile" data-theme-tile="system">
+          <span class="theme-tile__icon">&#9680;</span>
+          <span class="theme-tile__label">Auto</span>
+        </button>
+        <button class="theme-tile" data-theme-tile="light">
+          <span class="theme-tile__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </span>
+          <span class="theme-tile__label">Light</span>
+        </button>
+        <button class="theme-tile" data-theme-tile="dark">
+          <span class="theme-tile__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+          <span class="theme-tile__label">Dark</span>
+        </button>
+      </div>
+      <div class="theme-modal__actions">
+        <button class="theme-modal__save" id="theme-modal-save">Save</button>
+        <button class="theme-modal__cancel" id="theme-modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

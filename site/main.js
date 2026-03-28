@@ -66,32 +66,76 @@ const TAB_DATA = {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Theme toggle ──────────────────────────────────────
-  const THEME_KEY = 'cc-theme';
-  const root = document.documentElement;
-  const themeBtns = document.querySelectorAll('[data-theme-btn]');
+  // ── Theme modal ───────────────────────────────────────
+  const THEME_KEY   = 'cc-theme';
+  const root        = document.documentElement;
+  const backdrop    = document.getElementById('theme-modal-backdrop');
+  const navIconEl   = document.getElementById('theme-nav-icon');
+  const openBtn     = document.getElementById('theme-icon-btn');
+  const closeBtn    = document.getElementById('theme-modal-close');
+  const saveBtn     = document.getElementById('theme-modal-save');
+  const cancelBtn   = document.getElementById('theme-modal-cancel');
+  const tiles       = document.querySelectorAll('[data-theme-tile]');
+
+  const ICONS = {
+    system: '&#9680;',   // ◐ half-circle
+    light:  '&#9728;',   // ☀ sun
+    dark:   '&#9790;',   // ☾ crescent
+  };
+
+  let pending = null; // selection inside modal before Save
 
   function applyTheme(value) {
-    // 'system' = remove attribute and let CSS media query decide
     if (value === 'system') {
       root.removeAttribute('data-theme');
     } else {
       root.setAttribute('data-theme', value);
     }
-    themeBtns.forEach(b => {
-      b.classList.toggle('active', b.dataset.themeBtn === value);
-    });
+    navIconEl.innerHTML = ICONS[value];
   }
 
+  function openModal(current) {
+    pending = current;
+    tiles.forEach(t => t.classList.toggle('selected', t.dataset.themeTile === pending));
+    backdrop.hidden = false;
+    backdrop.focus?.();
+  }
+
+  function closeModal() {
+    backdrop.hidden = true;
+    pending = null;
+  }
+
+  // Initialise from storage
   const saved = localStorage.getItem(THEME_KEY) || 'system';
   applyTheme(saved);
 
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const value = btn.dataset.themeBtn;
-      localStorage.setItem(THEME_KEY, value);
-      applyTheme(value);
+  openBtn.addEventListener('click', () => openModal(localStorage.getItem(THEME_KEY) || 'system'));
+
+  tiles.forEach(tile => {
+    tile.addEventListener('click', () => {
+      pending = tile.dataset.themeTile;
+      tiles.forEach(t => t.classList.toggle('selected', t.dataset.themeTile === pending));
     });
+  });
+
+  saveBtn.addEventListener('click', () => {
+    if (pending) {
+      localStorage.setItem(THEME_KEY, pending);
+      applyTheme(pending);
+    }
+    closeModal();
+  });
+
+  cancelBtn.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+
+  backdrop.addEventListener('click', e => {
+    if (e.target === backdrop) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !backdrop.hidden) closeModal();
   });
 
   // ── Tab switcher ──────────────────────────────────────
